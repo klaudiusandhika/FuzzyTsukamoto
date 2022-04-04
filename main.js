@@ -9,12 +9,20 @@ function tsukamotoFunc(){
     let b = new Array(27);
     let o = new Array(27);
 
-    // $('#keputusan').val(keputusanJmlAir()+" ml (mili liter)");	
-
     // Fuzifikasi untuk mendapatkan nilai keanggotaan masing - masing himpunan
 
     // Kelompok Umur
     // Anak
+    function IsEmpty(x,y,z) {
+        if (x == "" || y == "" || z == "") {
+          alert("Isi dengan lengkap!");
+          showResult().disabled;
+        }
+        
+    }
+
+    IsEmpty(umur, berat, intensitas);
+
     function getKelompokUmurAnak(){
         if(umur <= 4){
             return 1;
@@ -352,33 +360,66 @@ function tsukamotoFunc(){
             temp0 = temp0 + A[i];
         }
         result = temp1/temp0;
-        return result.toFixed(1);
+        return result.toFixed(2);
     }
     
     function keputusanJmlAir(){
         fuzzyRules();
         return deFuzifikasi();
     }
-    document.getElementById("keputusan").innerHTML = keputusanJmlAir()+" mililiter";
-
-    let table_result = "";
-    for(i = 0; i < A.length; i++){
-        table_result += "<tr><td>"+(i+1)+"<td>"+u[i].toFixed(4)+"</td><td>"+b[i].toFixed(4)+"</td><td>"+o[i].toFixed(4)+"</td><td>"+A[i].toFixed(4)+"</td><td>"+z[i].toFixed(4)+"</td><td>"+(A[i]*z[i]).toFixed(4)+"</td><tr/>";
-    }
-    let total_A = 0;
-    for(i = 0; i < A.length; i++){
-        total_A = total_A + A[i];
-    }
-    let total_AZ = 0;
-    for(i = 0; i < A.length; i++){
-        total_AZ = total_AZ + (A[i]*z[i]);
-    }
-    document.getElementById("table_result").innerHTML = table_result ;
-    document.getElementById("total-a").innerHTML = total_A.toFixed(4) ;
-    document.getElementById("total-az").innerHTML = total_AZ.toFixed(4) ;
-    document.getElementById("cek-total").innerHTML = keputusanJmlAir() ;
-
-
     
-    
+
+        document.getElementById("keputusan").innerHTML = keputusanJmlAir()+" ml";
+      
+
+
+        let table_result = "";
+        for(i = 0; i < A.length; i++){
+            table_result += "<tr><td>"+(i+1)+"<td>"+u[i].toFixed(7)+"</td><td>"+b[i].toFixed(7)+"</td><td>"+o[i].toFixed(7)+"</td><td>"+A[i].toFixed(7)+"</td><td>"+z[i].toFixed(7)+"</td><td>"+(A[i]*z[i]).toFixed(7)+"</td><tr/>";
+        }
+        let total_A = 0;
+        for(i = 0; i < A.length; i++){
+            total_A = total_A + A[i];
+        }
+        let total_AZ = 0;
+        for(i = 0; i < A.length; i++){
+            total_AZ = total_AZ + (A[i]*z[i]);
+        }
+        document.getElementById("table_result").innerHTML = table_result ;
+        document.getElementById("total-a").innerHTML = total_A.toFixed(7) ;
+        document.getElementById("total-az").innerHTML = total_AZ.toFixed(7) ;
+        document.getElementById("cek-total").innerHTML = (total_AZ / total_A).toFixed(7)+" ml";
+        document.getElementById("rumus").innerHTML = "Jumlah Kebutuhan Air = "+total_AZ.toFixed(7)+" / "+ total_A.toFixed(7);
+
+        // Jumlah Kebutuhan Air = (Total Alpha / Total Alpha * Z)
 }
+
+function showResult(){
+    let s = document.getElementById("hasil");
+    if(s.style.display = "none"){
+        s.style.display = "block";
+    }  
+}
+
+function runProgram(){
+    tsukamotoFunc();
+    showResult();
+}
+
+function resetInput(){
+    document.getElementById('umur').value = ''
+    document.getElementById('berat').value = ''
+    document.getElementById('intensitas').value = ''
+    document.getElementById("hasil").style.display = "none";
+    document.getElementById("tabel-hasil").style.display = "none";
+    document.getElementById("keputusan").innerHTML = ''
+}
+
+function showTable(){
+    let s = document.getElementById("tabel-hasil");
+
+    if(s.style.display = "none"){
+    s.style.display = "flex";
+    }
+}
+
