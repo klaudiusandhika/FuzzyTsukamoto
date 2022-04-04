@@ -5,65 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <title>Fuzzy</title>
 </head>
 <body>
+<div class="program">
     <script src="main.js"> </script>
     
-    <h1>Cek Jumlah Kebutuhan Air Harian Anda!</h1>
-        <div class="box">
-            <div style="max-width:250px;margin:auto">
-                <div class="input-icons">
+        <div class="box" id="box">
+            <div class="container1">
+                <h3>Cek Jumlah Kebutuhan Air Anda!</h3>
+            </div>
+            <div class = container2>
                     <label>Usia (tahun)</label><br>
-                    <i class="fa-solid fa-square-user"></i>                    
                     <input type="number" id="umur" class="input-field" min="0" placeholder="Masukkan Usia Anda!"><br>
                     <label>Berat Badan (kilogram)</label><br>
-                    <i class="fa-solid fa-weight-scale"></i>                    
                     <input type="number" id="berat" class="input-field" min="0" placeholder="Masukkan Berat Badan Anda!"><br>
                     <label>Intenstias Olahraga Harian (menit)</label><br>
-                    <i class="fa fa-user icon"></i>
                     <input type="number" id="intensitas" class="input-field" min="0" placeholder="Masukkan Durasi Olahraga Anda!"><br><br>
+            </div>
+            <div class="container4" id="hasil" style="display:none">
+                <p id="text-keputusan">Jumlah kebutuhan Air Harian</p>
+                <div class="detail">
+                    <p id="keputusan"></p>
+                    <p class="detailbutton" type="button" onclick="showTable()">detail</p>
                 </div>
+            </div>
+            <div class="container3">
+                <button class="cekbutton" value="click" onclick="runProgram()">Cek!</button>
+                <button class="resetbutton" onclick="resetInput()">Reset</button>
             </div>
         </div>
 
+    <div id="tabel-hasil" class="tabel-hasil" style="display:none">
+        <h2>Detail Tabel Perhitungan</h2>
+        <div class="tabel">
+            <table>
+                <tr>
+                    <th>Rules No.</th>
+                    <th>Usia</th>
+                    <th>Berat</th>
+                    <th>Intensitas Olahraga</th>
+                    <th>Alpha</th>
+                    <th>Z</th>
+                    <th>Alpha * Z</th>
+                </tr>
+            </table>
             
-<button onclick="tsukamotoFunc()">Hitung</button>
-<p>Jumlah kebutuhan air harian Anda adalah:</p>
-<p id="keputusan"></p>
-
- 
-<table>
-    <tr>
-        <th>Rules No.</th>
-        <th>Usia</th>
-        <th>Berat</th>
-        <th>Intensitas Olahraga</th>
-        <th>Alpha</th>
-        <th>Z</th>
-        <th>Alpha * Z</th>
-    </tr>
-</table>
-
-<table id="table_result"></table>
-
-<table>
-    <tr>
-        <th id="total">Total</th>
-        <td id="total-a"></td>
-        <td></td>
-        <td id="total-az"</td>
-    </tr>
-</table>
-
-<p>Total Alpha / Total Alpha * Z</p>
-<p id="cek-total"></p>
-
-
-
- 
+            <table id="table_result"></table>
+            
+            <table>
+                <tr>
+                    <th id="total">Total</th>
+                    <td id="total-a"></td>
+                    <td></td>
+                    <td id="total-az"</td>
+                </tr>
+            </table>
+        </div>
+        <div class="output">
+            <p id="rumus"></p>
+            <p id="cek-total"></p>
+        </div>
+    </div>
+</div>
 
 </body>
 
