@@ -1,0 +1,230 @@
+*{
+    font-family: 'Trebuchet MS';
+}
+
+
+body{
+    background-color: #c8d6eb;
+    /* opacity: 0.9; */
+    background: radial-gradient(circle, transparent 20%, #c8d6eb 20%, #c8d6eb 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #c8d6eb 20%, #c8d6eb 80%, transparent 80%, transparent) 25px 25px, linear-gradient(#008ddd 2px, transparent 2px) 0 -1px, linear-gradient(90deg, #008ddd 2px, #c8d6eb 2px) -1px 0;
+    background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+}
+h3 {
+    color: #b4d6ff;
+  }
+
+.box{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    /* height: 500px; */
+    width: 400px;
+    align-items:center;
+    border-radius: 20px;
+    margin: 60px auto;
+    padding-bottom: 40px;
+    box-shadow: 0px 8px 5px 5px #81818179;
+
+}
+.container1{
+    background-color: #008cff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 80px;
+    text-align: center;
+    border-radius: 20px 20px 0px 0px; 
+}
+
+.container2{
+    /* background-color: wheat; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.container3{
+    margin-top: 30px;
+}
+
+.input-field {
+    display: flex;
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+input{
+    outline: none;
+    border-radius: 20px;
+    border: solid 2px;
+    border-color: #008cff;
+    background-color: #70bfff;
+    color: #006ab6;
+    font-size: 15px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+table, th, tr, td{
+    border-collapse: collapse;
+    border: solid 2px;
+    text-align: center;
+    border-color:#006ab6;
+    color:#006ab6;
+}
+th, tr, td{
+    width: 130px;
+}
+th{
+    background-color: #70bfff;
+}
+tr{
+    background-color: rgb(218, 237, 248);
+}
+
+#total{
+    width: 532px;
+}
+
+.output{
+    color:#006ab6;
+    text-align: center ;
+}
+
+.cekbutton{
+    font-size: 15px;
+    width: 90px;
+    background-color: #70bfff;
+    outline: none;
+    height: 40px;
+    border-radius: 20px;
+    border: solid;
+    border-color: #008cff;
+    cursor: pointer;
+    transition: 0.3s  ;
+    color: #006ab6;
+
+}
+.cekbutton:hover{
+    background-color: #b4ddff;
+}
+.resetbutton{
+    font-size: 15px;
+    width: 90px;
+    background-color: transparent;
+    outline: none;
+    height: 40px;
+    border-radius: 20px;
+    border: solid;
+    border-color: #008cff;
+    cursor: pointer;
+    transition: 0.3s  ;
+    color: #006ab6;
+
+}
+.resetbutton:hover{
+    background-color: #eba9a0;
+}
+
+.detailbutton{
+    font-size: 14px;
+    width: 10px;
+    background-color: transparent;
+    outline: none;
+    /* height: 30px; */
+    border-radius: 20px;
+    border: solid;
+    border-color: transparent;
+    cursor: pointer;
+    transition: 0.1s  ;
+    color: #008cff;
+    margin-top: 0;
+    opacity: 0.8;
+    /* margin-right: 200px; */
+
+}
+.detailbutton:hover{
+    opacity: 1;
+}
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+label{
+    color: #7d9ab1;
+    
+}
+::placeholder {
+    color: rgb(211, 241, 243);
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+.detail{
+    margin-top: 0;
+}
+
+#text-keputusan{
+    margin-right: 63px;
+    color: #7d9ab1;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#keputusan{
+    font-size: 40px;
+    color: #008cff;
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+
+.tabel-hasil{
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 0px auto;
+    border-radius: 20px;
+    /* max-width: 70%; */
+    width: 1000px;
+    margin: 60px auto;
+    box-shadow: 0px 8px 8px 8px #81818159;
+
+
+    /* float:inline-end */
+}
+#rumus{
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+}
+#cek-total{
+    font-size: 30px;
+    margin-top: 10px;
+
+}
+
+.tabel-hasil h2{
+    color: #b4d6ff;
+    background-color: #008cff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 100px;
+    text-align: center;
+    border-radius: 20px 20px 0px 0px; 
+    /* margin-bottom: 50px; */
+    margin-top: 0;
+    
+}
